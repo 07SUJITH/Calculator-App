@@ -26,7 +26,16 @@ function calculate(button) {
         screen.textContent = expression;
     }
 }
+function playSound() {
+    const audio = new Audio();
+    audio.src = './assets/soudns/click.mp3'
+    audio.play();
+}
 
 buttons.forEach(button => 
-    button.addEventListener('click',() =>   
-                                    calculate(button)));
+    button.addEventListener('click',
+    () =>{
+        playSound();
+        calculate(button);
+    })                      
+);
